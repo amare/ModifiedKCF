@@ -1,0 +1,70 @@
+<HTML>
+
+<HEAD>
+	<TITLE>Fourier-Mellin Transform GUI Help</TITLE>
+</HEAD>
+
+<BODY>
+	<H1>Fourier-Mellin Transform GUI Help</H1>
+	
+	<P>
+		Adam I. Wilmer (aiw99r@ecs.soton.ac.uk)
+	</P>
+	
+	<H2>
+		Introduction
+	</H2>
+	
+	<P>
+		This MATLAB toolbox implements the Fourier-Mellin transform.  Necessary requirements are the MATLAB Image Processing Toolbox and the cartesian to log-polar conversion code (which is included).
+	</P>
+	
+	<H2>
+		Example
+	</H2>
+	<P>Use this example to get an idea for what the program is all about.</P>
+
+<LI>1) Run 'fm_gui' at the MATLAB command prompt.
+<LI>2) Load 'lena.bmp' into both Input 1 and Input 2 windows.
+<LI>3) Apply any rotation and a scale change between 1 and 2 to the image 2 window.
+<LI>4) Set all 3 interpolation methods to 'bicubic' except for scale which should be set to 'nearest'.
+<LI>5) Press REGISTER.
+<LI>6) Note registration has not been successful so set Window to 'Kaiser' (or any other for that matter).
+<LI>7) Press REGISTER.
+<LI>8) The registration has been successful this time.
+	
+	<P>Playing with the rotation and scale of image 2 should give you some idea of how robust the Fourier-Mellin registration approach is.  Scaling the Lena image more than about 2.6 and less than 3 does not give successful registration unless a multiple points in the rotation/scale phase correlation plot are searched for the one that is most likely.  The slider under the REGISTER button allows the number of such points to be selected.  This can give increased performance at the cost of speed.  The best way to use the slider is to set it to 1 and then REGISTER and then increment it slowly until successful registration is obtained.</P>
+	
+	<H2>
+		Options
+	</H2>	
+
+	<P>
+	Drop-down menus next to images 1 and 2 allow different measurements necessary for registration to be displayed.  It is necessary for REGISTER to be pressed before these can be viewed.  These inlude the
+<LI> The input image itself
+<LI> Log-magnitude spectrum
+<LI> Phase Spectrum
+<LI> Log-polar plot of the magnitude spectrum
+<LI> Invariant Features (or "the Log magnitude of the Log-polar of the log magnitude of the original image")
+</P>
+	
+<P>A drop-down menu above the registered image allows the following to be visualised
+<LI> The registered image combined with input 1.
+<LI> The registered image alone.
+<LI> The phase-correlation plot of the log-polar magnitudes. (The maximum peak defines the rotation and scale registration parameters.)
+<LI> The phase-correlation plot of the log magnitudes. (The maximum peak defines the translation registration parameter.)
+
+</P>
+
+	
+	<H2>
+		Reference
+	</H2>
+	
+	<P>
+"An FFT-based Technique for Translation, Rotation and Scale-Invariant Image Registration", B. S. Reddy and B. N. Chatterji, IEEE Transactions on Image Processing, Volume 5, No. 8, August 1996, pp 1266-1271
+	</P>
+		
+</BODY>
+
+</HTML>                     
